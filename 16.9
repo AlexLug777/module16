@@ -1,0 +1,65 @@
+import math
+
+class Circle:
+    def __init__(self, x, y, radius):
+        self.x = x
+        self.y = y
+        self.radius = radius
+
+    def circleArea(self):
+        return math.pi * self.radius ** 2
+
+
+circle_1 = Circle(2,3,4)
+
+print(circle_1.circleArea())
+
+def getCircle(x, y, radius):
+    return "Круг({},{},{})".format(x, y, radius)
+
+print(getCircle(2,3,4)) 
+
+#
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def rectangleArea(self):
+        return self.length * self.width
+
+secondRectangle = Rectangle (5,10)
+print(secondRectangle.rectangleArea())
+#
+class Client:
+    def __init__(self, firstname, lastname):
+        self.firstname = firstname
+        self.lastname = lastname
+        self.balance = 0 # изначально баланс неизвестен
+
+    def setBalance(self, value):
+        self.balance = value
+
+    def printInformation(self):
+        print('Клиент "{} {}".Баланс: {} руб.'.format(self.firstname, self.lastname, self.balance))
+
+client_1 = Client("Иван", "Петров")
+client_1.setBalance(50)
+client_1.printInformation()
+#
+class Guest:
+    def __init__(self, firstname, lastname):
+        self.firstname = firstname
+        self.lastname = lastname
+
+class setStatus(Guest):
+    def __init__(self, firstname, lastname, city, status):
+        super().__init__(firstname, lastname)
+        self.city = city
+        self.status = status
+
+    def printInfo(self):
+        print('{} {}, г.{}, статус "{}"'.format(self.firstname, self.lastname, self.city, self.status))
+
+guest_1 = setStatus("Иван", "Петров", "Москва", "Наставник")
+guest_1.printInfo()
