@@ -1,0 +1,26 @@
+class Cat:
+    def __init__(self, name, gender, age):
+        self.name = name
+        self.gender = gender
+        self.age = age
+
+    def getName(self):
+        return self.name
+
+    def getGender(self):
+        return self.gender
+
+    def getAge(self):
+        return self.age
+
+    def print_list(self):
+        print('Имя - {}'.format(self.name))
+        print('Пол - {}'.format(self.gender))
+        print('Возраст - {}\n'.format(self.age))
+        
+        #from Cat_test import Cat
+#cat_1 = Cat('Барон', 'мальчик', '2')
+#cat_2 = Cat('Сэм', 'мальчик', '2')
+#pets = [cat_1, cat_2]
+#for pet in pets:
+   #pet.print_list()
